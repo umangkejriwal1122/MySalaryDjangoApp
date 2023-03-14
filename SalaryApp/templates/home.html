@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Prediction</title>
+</head>
+
+<body>
+    <center>
+        <h2>Salary Prediction Web App</h2>
+        <form method="post" action="{% url 'mysalary' %}">
+            {% csrf_token %}
+            <input type="number" name="year" placeholder="Enter Year" required>
+            <input type="submit" value="Predict">
+        </form>
+        {% if salary %}
+        <h5>The Predicted Salary is {{ salary }}</h5>
+        {% endif %}
+    </center>
+</body>
+
+</html>

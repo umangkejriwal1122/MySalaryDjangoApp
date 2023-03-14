@@ -1,0 +1,1 @@
+web: gunicorn SalaryProject.wsgi --log-file -
